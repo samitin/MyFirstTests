@@ -39,4 +39,23 @@ class EmailValidatorTest {
     fun emailValidator_NullEmail_ReturnsFalse() {
         assertFalse(EmailValidator.isValidEmail(null))
     }
+
+    @Test
+    fun emailValidator_NotDog_ReturnsFalse(){
+        assertFalse(EmailValidator.isValidEmail("nameemail.com"))
+    }
+
+    @Test
+    fun emailValidator_TwoDog_ReturnsFalse(){
+        assertFalse(EmailValidator.isValidEmail("name@@email.com"))
+    }
+    @Test
+    fun emailValidator_NotPoint_ReturnsFalse(){
+        assertFalse(EmailValidator.isValidEmail("name@emailcom"))
+    }
+
+    @Test
+    fun emailValidator_RussianWord_ReturnsFalse(){
+        assertFalse(EmailValidator.isValidEmail("имя@email.com"))
+    }
 }
