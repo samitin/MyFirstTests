@@ -58,4 +58,32 @@ class EmailValidatorTest {
     fun emailValidator_RussianWord_ReturnsFalse(){
         assertFalse(EmailValidator.isValidEmail("имя@email.com"))
     }
+    @Test
+    fun emailValidator_equalsString_ReturnTrue(){
+        val texttest="text"
+        assertEquals(EmailValidator.text, texttest)
+    }
+    @Test
+    fun emailValidator_notEqualsString_ReturnTrue(){
+        val texttest="text2"
+        assertNotEquals(EmailValidator.text, texttest)
+    }
+    @Test
+    fun emailValidator_arrayEqualsString_ReturnTrue(){
+        val texttest= arrayOf("test1","test2","test3")
+        assertArrayEquals(EmailValidator.list, texttest)
+    }
+    @Test
+    fun emailValidator_isNull_ReturnTrue(){
+        assertNull(EmailValidator.isNull)
+    }
+    @Test
+    fun emailValidator_isNotNull_ReturnTrue(){
+        assertNotNull(EmailValidator.text)
+    }
+    @Test
+    fun emailValidator_same_ReturnTrue(){
+        assertSame(EmailValidator.text,"text")
+    }
+
 }

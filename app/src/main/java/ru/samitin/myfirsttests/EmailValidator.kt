@@ -6,6 +6,8 @@ import java.util.regex.Pattern
 
 class EmailValidator : TextWatcher {
 
+
+
     internal var isValid = false
 
     override fun afterTextChanged(editableText: Editable) {
@@ -34,5 +36,8 @@ class EmailValidator : TextWatcher {
         fun isValidEmail(email: CharSequence?): Boolean {
             return email != null && EMAIL_PATTERN.matcher(email).matches()
         }
+        val text:String="text"
+        val list= arrayOf("test1","test2","test3")
+        val isNull=null
     }
 }
